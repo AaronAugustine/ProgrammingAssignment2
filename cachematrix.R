@@ -1,7 +1,8 @@
-## This code has 2 functions 
+## This code has 2 functions  
 ## makeCacheMatrix which creates a special matrix object that can cache its inverse.
 ## cacheSolve which calculates the inverse of the special matrix.
-## Details comments are provided in the function
+## Detailed comments are provided in the functions
+## At the bottom of the code is example commands to test the functions
 
 makeCacheMatrix <- function(x = matrix()) {
   i <- NULL                           #Assign null to i    
@@ -28,3 +29,10 @@ cacheSolve <- function(x, ...) {
    x$setinv(i)                         #Use setinv function to assign the inverse to the list
    i                                   #return the inverse from the function
 }
+
+#Code to test the functions
+#mdat <- matrix(c(100,200,300,400), nrow = 2, ncol = 2, byrow = TRUE)  Create a test matrix
+#x<-makeCacheMatrix(mdat)                                              Assign the special matrix to x
+#cacheSolve(x)                                                         Find the inverse
+#y<-cacheSolve(x)                                                      Make sure the "getting cached data message" works
+#mdat%*%y                                                              Verify you get the identity matrix back
